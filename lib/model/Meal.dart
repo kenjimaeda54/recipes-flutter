@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:recipes/utils/Complexity.dart';
+import 'package:recipes/utils/Cost.dart';
+
 class Meal {
   final String id;
   final List<String> categories;
@@ -25,4 +29,30 @@ class Meal {
       required this.isGlutenFree,
       required this.isLactoseFree,
       required this.isVegan});
+
+  String get shouldReturnComplexity {
+    switch (complexity) {
+      case Complexity.difficult:
+        return "Dificil";
+      case Complexity.medium:
+        return "Normal";
+      case Complexity.simple:
+        return "Simples";
+      default:
+        return "Desconhecida";
+    }
+  }
+
+  String get shouldReturnExpensive {
+    switch (cost) {
+      case Cost.expensive:
+        return "Caro";
+      case Cost.cheap:
+        return "Barato";
+      case Cost.fair:
+        return "Justo";
+      default:
+        return "Desconhecida";
+    }
+  }
 }
