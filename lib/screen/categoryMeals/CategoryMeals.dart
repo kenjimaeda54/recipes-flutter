@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes/components/singleCardMeal/SingleCardMeal.dart';
 import 'package:recipes/data/mealsMock.dart';
 import 'package:recipes/model/Category.dart';
 
@@ -28,7 +29,7 @@ class CategoryMeals extends StatelessWidget {
             itemBuilder: (_, index) {
               final it = listMeals[index];
 
-              return Text(it.title);
+              return SingleCardMeal(it);
             }));
   }
 }
