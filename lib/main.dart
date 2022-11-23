@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipes/screen/Category/CategoryScreen.dart';
 import 'package:recipes/screen/categoryMeals/CategoryMeals.dart';
 import 'package:recipes/screen/mealDetails/mealDetails.dart';
+import 'package:recipes/screen/settings/Settings.dart';
+import 'package:recipes/screen/tabs/TabasNavigation.dart';
 import 'package:recipes/utils/appRoutes.dart';
 
 void main() {
@@ -33,9 +35,10 @@ class MyApp extends StatelessWidget {
       //concentro as rotas aqui
       routes: {
         //rotas inicial pode ser /
-        AppRoutes.home: (_) => const CategoryScreen(),
+        AppRoutes.home: (_) => const TabsNavigation(),
         AppRoutes.categoryMeals: (_) => const CategoryMeals(),
-        AppRoutes.mealDetails: (_) => const MealDetails()
+        AppRoutes.mealDetails: (_) => const MealDetails(),
+        AppRoutes.settings: (_) => const Settings(),
       },
     );
   }
