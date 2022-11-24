@@ -3,8 +3,12 @@ import 'package:recipes/components/drawer/DrawerNavigation.dart';
 import 'package:recipes/screen/Category/CategoryScreen.dart';
 import 'package:recipes/screen/favorite_recipes/FavoriteRecipes.dart';
 
+import '../../model/Meal.dart';
+
 class TabsNavigation extends StatefulWidget {
-  const TabsNavigation({Key? key}) : super(key: key);
+  late List<Meal> meals;
+
+  TabsNavigation(this.meals, {super.key});
 
   @override
   State<TabsNavigation> createState() => _TabsNavigationState();
@@ -12,11 +16,18 @@ class TabsNavigation extends StatefulWidget {
 
 class _TabsNavigationState extends State<TabsNavigation> {
   int tabSelected = 0;
+  late List<Map<String, Object>> screensNavigation;
 
-  List<Map<String, Object>> screensNavigation = [
-    {"title": "Lista de categorias", "screen": const CategoryScreen()},
-    {"title": "Lista de favoritos", "screen": const FavoriteRecipes()},
-  ];
+  @override
+  //funções soltas no codigo não dão acesso ao widget,print...
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    screensNavigation = [
+      {"title": "Lista de categorias", "screen": const CategoryScreen()},
+      {"title": "Lista de favoritos", "screen": FavoriteRecipes(widget.meals)},
+    ];
+  }
 
   int handleTabSelected(int index) {
     setState(() {

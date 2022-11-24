@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:recipes/model/Meal.dart';
 
 class MealDetails extends StatelessWidget {
-  const MealDetails({Key? key}) : super(key: key);
+  void Function(Meal meal) toggleFavorites;
+  bool Function(Meal meal) isFavoritesRecipes;
+
+  MealDetails(
+      {super.key,
+      required this.isFavoritesRecipes,
+      required this.toggleFavorites});
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +87,16 @@ class MealDetails extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).colorScheme.secondary,
+        //com pop conseguimos mandar um argumento para tela anterior
+        // () => Navigator.of(context).pop(meal.title)
+        onPressed: () => toggleFavorites(meal),
+        child: Icon(
+          isFavoritesRecipes(meal) ? Icons.star : Icons.star_border,
+          size: 26,
         ),
       ),
     );

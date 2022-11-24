@@ -9,6 +9,8 @@ class SingleCardMeal extends StatelessWidget {
 
   void _handleRoute(BuildContext context) {
     Navigator.of(context).pushNamed(AppRoutes.mealDetails, arguments: meal);
+    //para pegar um argumento que foi enviado de outra tela sendo  esta como primeiro
+    //seria pelo then
   }
 
   @override
