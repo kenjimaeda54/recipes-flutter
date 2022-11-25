@@ -95,13 +95,6 @@ App contendo receitas, possibilidade de filtrar por glúten, sem lactose e vegan
 //componente drawer
  Widget build(BuildContext context) {
     void handleNavigatior(String route) {
-      //ja que estamos usando drawer o ideal nao e usar pushNamed
-      //porque com pushNamed estarei colocando mais uma pilha assim as telas
-      //estaram sempre somando ao invez de realmetne revmoer com pop que seria no botao de voltar
-
-      //com o metodo pushReplacementNamed estarei substituindo a rota anterior
-      //assim a as telas nao haveram botao de voltar , para voltar as telas anteriores
-      //e so chamar este compoennte nas telas que deseja voltar
       Navigator.of(context).pushReplacementNamed(route);
     }
 
