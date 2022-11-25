@@ -85,7 +85,7 @@ App contendo receitas, possibilidade de filtrar por glúten, sem lactose e vegan
  
   ```
 	
-	##
+##
 - Em rotas do tipo Drawer navigation e ideal usar pushReplacementNamed, desta maneira não  iremos criar  várias pilhas de telas
 - Ao usar esse método a pilha anterior e morta, então após navega para outra tela é ideal chamar novamente o drawer para conseguir voltar
 - Repara que o componente drawer e acionado tanto no TabNavigation no exemplo acima como no Settings
